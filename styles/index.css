@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --font-color:white;
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("../assets/andy-holmes-rCbdp8VCYhQ-unsplash.jpg");
+    background-repeat: no-repeat;
+    color:var(--font-color);
+}
+
+.flex{
+    display: flex;
+}
+.flex-c{
+    display: flex;
+    flex-direction: column;
+}
+.center-sb{
+    justify-content: space-between;
+    align-items: center;
+}
+.center{
+    justify-content: center;
+    align-items:center;
+}
+.li-style{
+    list-style: none;
+    padding: 10px;
+    color: #fff;
+
+    --c: rgb(37, 118, 149); /* the color */
+
+    font-weight: 400;
+    background: 
+        linear-gradient(90deg, #fff 50%, var(--c) 0) calc(100% - var(--_p, 0%)) / 200%, 
+        linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) no-repeat,
+        var(--_c, #0000);
+    -webkit-background-clip: text, padding-box, padding-box;
+            background-clip: text, padding-box, padding-box;
+    transition: 0s, color .3s, background-color .5s;
+}
+.li-style:hover{
+  --_c: var(--c);
+  --_p: 100%;
+  transition: 0.5s, color .2s, background-color 0s .5s;
+}
+
+.nav{
+    padding:20px !important;
+    height:auto;
+    color:var(--font-color);
+}
+.hero-text{
+    padding:10px;
+    height: 5.75rem;
+    margin:0 !important;
+    font-size:1.5rem;
+    font-style: italic;
+    font-family: 'Comic Neue', cursive;
+}
+.hero-text:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+    transition:transform 0.3s ease-in-out;
+}
+.hero-text p{
+    margin:0 !important;
+}
+
+.a-style{
+    text-decoration: none;
+    color:var(--font-color);
+    padding:10px;
+    border:2px solid white; 
+    border-radius: 10px;
+}
+.a-style:hover{
+    background-color: white;
+    color:#870102;
+    transition:1ms ease;
+    transition: background-color 0.3s ease-in-out, color 0.5s ease-in-out;
+}
+
+.search input{
+    border:none;
+    width:20rem;
+    padding:20px;
+    color:var(--font-color);
+    background:transparent;
+    font-size: large ;
+    border: 1px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.search input:focus{
+    outline:none;
+}
+.search button{
+    border:none;
+    width:5rem;
+    height: 3rem;
+    cursor: pointer;
+    color:var(--font-color);
+    background:transparent;
+}
+
+.search input::-webkit-input-placeholder{
+    color:antiquewhite;
+}
+
+#section-1{
+    min-height:20rem;
+}
+
+#search_suggestion{
+    position: absolute;
+    z-index: 1000;
+    max-height: 20rem;
+    border-radius: 0px 0px 10px 10px;
+    overflow: scroll !important;
+}
+#search_suggestion::-webkit-scrollbar {
+    display: none;
+}
+
+#cards_container{
+    padding: 20px;
+    min-height:30rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    row-gap: 1em;
+    column-gap: 1em;
+    
+}
+
+/* ---------------------------styles for the add to favourite(heart) button ---------------------------*/
+.heart-like-button {
+    position: relative;
+    width: 20px;
+    height: 16px;
+  }
+  .heart-like-button:before {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    width: 10px;
+    height: 15px;
+    border-radius: 40px 40px 0 0;
+    background-color: rgb(220, 219, 219);
+    content: "";
+    cursor: pointer;
+    transition: background .4s;
+  }
+  .heart-like-button:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+    width: 10px;
+    height: 15px;
+    border-radius: 40px 40px 0 0;
+    background-color: rgb(220, 219, 219);
+    content: "";
+    cursor: pointer;
+    transition: background .4s;
+  }
+  
+  .heart-like-button.liked::before,
+  .heart-like-button.liked::after {
+    background-color: rgb(199, 27, 27);
+  }
+  .heart-like-button.liked {
+    animation: liked .4s ease;
+  }
+  @keyframes liked {
+    0% {
+      transform: scale(.8);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+/* ------------------------------------------------------------------------------------------------- */

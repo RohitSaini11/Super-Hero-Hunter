@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --font-color:white;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("../assets/andy-holmes-rCbdp8VCYhQ-unsplash.jpg");
+    background-repeat: no-repeat;
+    color:var(--font-color) !important;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    row-gap: 1em;
+    column-gap: 1em;
+}
+.top-right{
+    min-width: 40rem;
+}
+#main_container{
+    margin:2rem;
+    padding:2rem;
+    min-height: 30rem;
+    background-color: rgba(128, 128, 128, 0.905);
+    border-radius: 30px;
+    cursor: default
+}
+#loader{
+    margin:auto;
+}
+#backBtn{
+    text-align: center;
+    margin:2rem;
+    padding:1rem;
+}
+#backBtn button{
+    background: transparent;
+    border-radius: 10px;
+    border:none;
+    font-size: 2rem;;
+}
+#backBtn button:hover{
+    transform:scale(1.04);
+    transition: transform .3s ease-out;
+}
+#backBtn a{
+    padding: 0.5rem;;
+    background-color:rgba(128, 128, 128, 0.521);
+    border-radius: inherit;
+    color:white;
+    text-decoration: none;
+}
+#marvelLink{
+    color:white;
+}
+#marvelLink:hover{
+    color:darkred;
+}
